@@ -1,7 +1,7 @@
 # encoding: utf-8
 """
-@author:  sherlock
-@contact: sherlockliao01@gmail.com
+@author:  clpbc
+@contact: clpszdnb@gmail.com
 """
 
 import torch

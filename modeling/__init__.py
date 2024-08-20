@@ -4,17 +4,12 @@
 @contact: clpszdnb@gmail.com
 """
 
-from .flip import Flip
-from .jpgfas import JpgFas
+from .mefas import MEFas
 
 
 def BuildModel(cfg):
 
-    if cfg['model']['mode'] == 'flip':
-        model = Flip(cfg)
-    
-    elif cfg['model']['mode'] == 'jpgfas':
-        model = JpgFas(cfg)
+    model = MEFas(cfg)
 
     return model
 

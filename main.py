@@ -24,7 +24,7 @@ if __name__ == '__main__':
     
 
     ### 备份当前运行code
-    rootPath = r'/home/wanghaowei/cailvpan/face_anti_spoofing/CLP'
+    rootPath = r'./'
     for item in os.listdir(rootPath):
         if item in ['op_dir', 'new_template.ipynb', 'scripts']:
             continue

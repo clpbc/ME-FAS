@@ -1,7 +1,7 @@
 import argparse
 
 def get_parser():
-    parser = argparse.ArgumentParser(description='clp pytorch training and testing ')
+    parser = argparse.ArgumentParser(description='pytorch training and testing ')
 
     # base args
     parser.add_argument('--config', required = True, help = 'yaml配置文件')

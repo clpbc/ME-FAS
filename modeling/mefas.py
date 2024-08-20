@@ -161,7 +161,7 @@ class MultiPromptLearner(nn.Module):
         return prompts, shared_ctx
 
 
-class JpgFas(nn.Module):
+class MEFas(nn.Module):
     def __init__(self, cfg):
         super().__init__()
 

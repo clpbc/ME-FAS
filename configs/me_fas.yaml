@@ -1,9 +1,9 @@
 base:
-    repeat_num: 5
+    repeat_num: 2
 
 
 dataset:
-    root_path: '/home/wanghaowei/cailvpan/face_anti_spoofing/FLIP/data/MCIO'
+    root_path: './MCIO'  # MCIO数据存储位置
     source: 'c'    # c, i, o, m, ci, ..., cio, ..., ciom
     target: 'i'    # c, i, o, m, ci, ..., cio, ..., ciom
     size: 2
@@ -26,8 +26,17 @@ transforms:
 
 
 model:
-    mode: flip
-    backbone: 'ViT-B/16'
+    mode: mefas 
+    backbone: ViT-B/16
+    nctx: 2  #  len of soft prompt
+    prompt_depth: 9 # Max 12, Min 1 ,for 1 it will act asa shallow MaPLe (J = 1)
+    language_init: a photo of a  # init of soft prompt
+
+
+mask:
+    mode: random_location  # location/random/grid/border
+    ratio: 0.5
+    depth: 12
 
 
 train:
@@ -48,8 +57,8 @@ scheduler:
     params:
         use: False
         step_each_epoch: 100
-        total_epochs: 40
-        warmup: False
+        total_epochs: 50
+        warmup: True
         warmup_epochs: 2
         warmup_factor: 1.0e-3
 

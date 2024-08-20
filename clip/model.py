@@ -449,7 +449,7 @@ class image2text_attention_transform(nn.Module):
         return aug_text_feat.unsqueeze(1).expand(-1, text_prompt.shape[1], -1)
 
 
-class CLIP_JpgFas(nn.Module):
+class CLIP_MEFas(nn.Module):
     def __init__(self,
                  embed_dim: int,
                  # vision
@@ -700,8 +700,8 @@ def build_model(state_dict: dict, config = None):
     transformer_heads = transformer_width // 64  # 8
     transformer_layers = len(set(k.split(".")[2] for k in state_dict if k.startswith(f"transformer.resblocks")))  # 12
 
-    if config and config['model']['mode'] == 'jpgfas':
-        model = CLIP_JpgFas(
+    if config and config['model']['mode'] == 'mefas':
+        model = CLIP_MEFas(
             embed_dim,
             image_resolution, vision_layers, vision_width, vision_patch_size,
             context_length, vocab_size, transformer_width, transformer_heads, transformer_layers, config

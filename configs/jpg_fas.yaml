@@ -1,0 +1,87 @@
+base:
+    repeat_num: 2
+
+
+dataset:
+    root_path: '/media/disk2/cailvpan/FaceAnti-spoofing/MCIO'
+    source: 'c'    # c, i, o, m, ci, ..., cio, ..., ciom
+    target: 'i'    # c, i, o, m, ci, ..., cio, ..., ciom
+    size: 2
+    num_workers: 8
+    classname:
+        - 'spoof face'
+        - 'real face'
+
+
+transforms:
+    imgSize: 224
+    mean:
+        - 0.535
+        - 0.419
+        - 0.358
+    std:
+        - 0.276
+        - 0.251
+        - 0.242
+
+
+model:
+    mode: jpgfas 
+    backbone: ViT-B/16
+    nctx: 2  #  len of soft prompt
+    prompt_depth: 9 # Max 12, Min 1 ,for 1 it will act asa shallow MaPLe (J = 1)
+    language_init: a photo of a  # init of soft prompt
+
+
+mask:
+    mode: random_location  # location/random/grid/border
+    ratio: 0.5
+    depth: 12
+
+
+train:
+    iters: 4000
+    iter_per_epoch: 100
+    print_interval: 100
+    amp: True
+
+
+optimizer:
+  name: Adam
+  params:
+    lr: 1.0e-6
+    weight_decay: 1.0e-6
+
+
+scheduler:
+    params:
+        use: False
+        step_each_epoch: 100
+        total_epochs: 50
+        warmup: True
+        warmup_epochs: 2
+        warmup_factor: 1.0e-3
+
+
+loss_1:
+  name: CrossEntropyLoss
+  weight: 1.0
+  params:
+    reduction: mean
+
+
+loss_2:
+    name: InfoNCELoss
+    weight: 1.0
+    params:
+        reduction: mean
+        n_views: 2
+        temperature: 0.1
+    
+
+loss_3:
+    name: MSELoss
+    weight: 1.0
+    params:
+        reduction: mean
+        

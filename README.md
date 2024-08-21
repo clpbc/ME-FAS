@@ -6,7 +6,11 @@
 
 ## Highlights ⭐
 
+<figure style="text-align: center;">
 <img src="https://clpbc-pic.oss-cn-nanjing.aliyuncs.com/img/202408210915632.png" alt="image-20240821091504565" style="zoom:50%;" />
+</figure>
+
+
 
 1. We propose a novel early alignment network, ME-FAS, which utilizes prompts and masking as efficient intermediaries which significantly enhances the model's generalization capabilities across diverse domains.
 2.  Extensive experiments and analysis, we demonstrate that our method significantly outperforms state-of-the-art competitors on widely used benchmark datasets, confirming its superiority in enhancing DG-FAS tasks.
@@ -35,3 +39,18 @@ pip install -r requirements.txt
 
 Please refer to [datasets.md](https://github.com/clpbc/ME-FAS/blob/main/data/datasets/processing/datasets.md) for acquiring and pre-processing the datasets.
 
+### Training
+
+```shell
+python main.py --config configs/me_fas.yaml --device cuda:0;
+```
+
+### Model Zoo
+
+We will be uploading the training logger and training model soon.
+
+### Results 📈
+
+<img src="https://clpbc-pic.oss-cn-nanjing.aliyuncs.com/img/202408211038408.png" alt="image-20240821103844258" style="zoom: 67%;" />
+
+<img src="https://clpbc-pic.oss-cn-nanjing.aliyuncs.com/img/202408211039557.png" alt="image-20240821103913424" style="zoom:67%;" />

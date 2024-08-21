@@ -1,6 +1,6 @@
 ### Data prepoecessing - MCIO
 
-- 对于MCIO数据集，先将视频提取成图像帧，之后使用MTCNN进行人脸图像对齐裁切
+- 对于MCIO数据集，先将视频提取成图像帧，之后使用[MTCNN](https://github.com/timesler/facenet-pytorch/tree/master)进行人脸图像对齐裁切
 
 1. 对于每个视频，取视频中的两帧，frame[math.floor(1/4 * total_frame_num)]与frame[math.floor(3/4 * total_frame_num)],保存帧名为video_frame0.jpg/video_frame1.jpg.
 2. 将所有帧输入MTCNN获取裁切对齐后人脸，图像尺寸为(224, 224, 3)，RGB三通道图像

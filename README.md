@@ -13,7 +13,7 @@
 
 ## Instruction for code usage 📄
 
-**Setup**
+### **Setup**
 
 - Get Code
 
@@ -30,4 +30,8 @@ conda activate mefas
 conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=10.2 -c pytorch
 pip install -r requirements.txt
 ```
+
+### Dataset Pre-Processing
+
+Please refer to [datasets.md](\data\datasets\processing\Data preprocessing.md) for acquiring and pre-processing the datasets.
 

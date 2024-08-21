@@ -33,5 +33,5 @@ pip install -r requirements.txt
 
 ### Dataset Pre-Processing
 
-Please refer to [datasets.md](\data\datasets\processing\Data preprocessing.md) for acquiring and pre-processing the datasets.
+Please refer to [datasets.md](data\datasets\processing\Data preprocessing.md) for acquiring and pre-processing the datasets.
 

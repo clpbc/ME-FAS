@@ -33,4 +33,4 @@ pip install -r requirements.txt
 
 ### Dataset Pre-Processing
 
-Please refer to [datasets.md](https://github.com/clpbc/ME-FAS/blob/main/data\datasets\processing\"Data preprocessing.md") for acquiring and pre-processing the datasets.
+Please refer to [datasets.md]([ME-FAS/data/datasets/processing/Data preprocessing.md at main · clpbc/ME-FAS (github.com)](https://github.com/clpbc/ME-FAS/blob/main/data/datasets/processing/Data preprocessing.md)) for acquiring and pre-processing the datasets.

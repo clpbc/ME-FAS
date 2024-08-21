@@ -59,9 +59,51 @@ data/MCIO/frame/
         |--197_spoof_420156.jpg       
 ```
 
+### Data prepoecessing - WCS
 
+- 对于WCS数据集，只使用原始给定帧图像同时裁切图像[多余黑边]([CASIA-SURF_CeFA/at_learner_core/at_learner_core/utils/transforms.py at 205d3d976523ed0c15d1e709ed7f21d50d7cf19b · AlexanderParkin/CASIA-SURF_CeFA (github.com)](https://github.com/AlexanderParkin/CASIA-SURF_CeFA/blob/205d3d976523ed0c15d1e709ed7f21d50d7cf19b/at_learner_core/at_learner_core/utils/transforms.py#L456))。
 
+1. 使用surf数据集中的所有帧及其原始文件名。在cefa与wmca数据集中每个视频等距采样10帧，将采样帧另存为videoname_XX.jpg（其中XX表示采样帧的索引）详细文件名可以在data/WCS/txt/中找到。
+2. 将所有帧输入MTCNN获取裁切对齐后人脸，图像尺寸为(224, 224, 3)，RGB三通道图像
+3. 保存帧在data/WCS/frame/,遵循在data/WCS/txt/文件中的文件名，并且按照以下的文件夹格式进行文件组织。
 
+```
+data/WCS/frame/
+|-- wmca
+    |-- train
+    |   |--real
+    |   |  |--31.01.18_035_01_000_0_01_00.jpg, 31.01.18_035_01_000_0_01_05.jpg
+    |   |--fake
+    |      |--31.01.18_514_01_035_1_05_00.jpg, 31.01.18_514_01_035_1_05_05.jpg
+    |-- test
+        |--real
+        |  |--31.01.18_036_01_000_0_00_00.jpg, 31.01.18_036_01_000_0_00_01.jpg
+        |--fake
+           |--31.01.18_098_01_035_3_13_00.jpg, 31.01.18_098_01_035_3_13_01.jpg
+|-- cefa
+    |-- train
+    |   |--real
+    |   |  |--3_499_1_1_1_00.jpg, 3_499_1_1_1_01.jpg
+    |   |--fake
+    |      |--3_499_3_2_2_00.jpg, 3_499_3_2_2_01.jpg
+    |-- test
+        |--real
+        |  |--3_299_1_1_1_00.jpg, 3_299_1_1_1_01.jpg
+        |--fake
+           |--3_299_3_2_2_00.jpg, 3_299_3_2_2_01.jpg
+|-- surf
+    |-- train
+    |   |--real
+    |   |  |--Training_real_part_CLKJ_CS0110_real.rssdk_color_91.jpg
+    |   |--fake
+    |      |--Training_fake_part_CLKJ_CS0110_06_enm_b.rssdk_color_91.jpg
+    |-- test
+        |--real
+        |  |--Val_0007_007243-color.jpg
+        |--fake
+           |--Val_0007_007193-color.jpg
+```
 
+## Acknowledgement
 
-
+The data-preprocessing method mentioned above is followed directly from [few-shot-fas](https://github.com/hhsinping/few_shot_fas) repository. We thank the authors for their great work and for making the code public.

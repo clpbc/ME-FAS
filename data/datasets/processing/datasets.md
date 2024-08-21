@@ -61,7 +61,7 @@ data/MCIO/frame/
 
 ### Data prepoecessing - WCS
 
-- 对于WCS数据集，只使用原始给定帧图像同时裁切图像[多余黑边]([CASIA-SURF_CeFA/at_learner_core/at_learner_core/utils/transforms.py at 205d3d976523ed0c15d1e709ed7f21d50d7cf19b · AlexanderParkin/CASIA-SURF_CeFA (github.com)](https://github.com/AlexanderParkin/CASIA-SURF_CeFA/blob/205d3d976523ed0c15d1e709ed7f21d50d7cf19b/at_learner_core/at_learner_core/utils/transforms.py#L456))。
+- 对于WCS数据集，只使用原始给定帧图像同时裁切图像[多余黑边](https://github.com/AlexanderParkin/CASIA-SURF_CeFA/blob/205d3d976523ed0c15d1e709ed7f21d50d7cf19b/at_learner_core/at_learner_core/utils/transforms.py#L456)。
 
 1. 使用surf数据集中的所有帧及其原始文件名。在cefa与wmca数据集中每个视频等距采样10帧，将采样帧另存为videoname_XX.jpg（其中XX表示采样帧的索引）详细文件名可以在data/WCS/txt/中找到。
 2. 将所有帧输入MTCNN获取裁切对齐后人脸，图像尺寸为(224, 224, 3)，RGB三通道图像

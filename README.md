@@ -72,4 +72,4 @@ We will be uploading the training logger and training model soon.
 
 ### Acknowledgement 🙏
 
-Our code is built on top of the [few_shot_fas](https://github.com/hhsinping/few_shot_fas) 、[FLIP](https://github.com/koushiksrivats/FLIP) and [MaPLe](https://github.com/muzairkhattak/multimodal-prompt-learning)repository. We thank the authors for releasing their code.
+Our code is built on top of the [few_shot_fas](https://github.com/hhsinping/few_shot_fas) 、[FLIP](https://github.com/koushiksrivats/FLIP) and [MaPLe](https://github.com/muzairkhattak/multimodal-prompt-learning) repository. We thank the authors for releasing their code.

@@ -2,7 +2,7 @@
 
 ## Updates ⏱️
 
-- **2024-08-20**: Code released.（The training log file and training model will be uploaded later.）
+- **2025-05-12**: Code released.（The training log file and training model will be uploaded later.）
 
 ## Highlights ⭐
 
